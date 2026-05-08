@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#how", label: "How it works" },
-  { href: "#shoes", label: "Shoe reviews" },
-  { href: "#outfits", label: "Outfits" },
-  { href: "#waitlist", label: "Waitlist" },
+  { href: "/explore", label: "Explore" },
+  { href: "/#how", label: "How it works" },
+  { href: "/#shoes", label: "Shoe reviews" },
+  { href: "/#outfits", label: "Outfits" },
 ];
 
 export function Navbar() {
