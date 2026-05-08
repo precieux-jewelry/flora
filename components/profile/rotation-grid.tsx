@@ -4,7 +4,6 @@ import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RotationShoe } from "@/data/profiles";
 import { getShoe } from "@/data/shoes";
-import { unsplash } from "@/lib/img";
 
 const statusColor: Record<RotationShoe["status"], string> = {
   Active: "bg-emerald-100 text-emerald-700",
@@ -26,9 +25,9 @@ export function RotationGrid({ rotation }: { rotation: RotationShoe[] }) {
             className="group rounded-3xl border border-neutral-100 bg-white overflow-hidden hover:shadow-lg transition"
           >
             <div className={`relative h-32 bg-gradient-to-br ${s.tone} overflow-hidden`}>
-              {shoe?.image.photoId && (
+              {shoe?.image.src && (
                 <Image
-                  src={unsplash(shoe.image.photoId, { w: 600, h: 320 })}
+                  src={shoe.image.src}
                   alt={`${s.brand} ${s.name}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 25vw"

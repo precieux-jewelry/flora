@@ -5,7 +5,7 @@ export type OutfitDetail = {
   caption: string;
   user: { name: string; username: string; tone: string; avatarId?: string };
   photoTone: string;
-  photoId?: string;
+  photoSrc?: string;
   h: string;
   runType: RunType;
   weather: string;
@@ -28,7 +28,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Sunrise long run — golden hour, mesh tank, cap on backwards.",
     user: { name: "Maya Reyes", username: "mayaruns", tone: "bg-amber-300", avatarId: "1494790108377-be9c29b29330" },
     photoTone: "from-amber-200 via-orange-100 to-yellow-50",
-    photoId: "1530143584546-02191bc84eb5",
+    photoSrc: "/images/run-sunset.jpg",
     h: "h-80",
     runType: "long-run",
     weather: "62°F · clear",
@@ -48,7 +48,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Berlin race day fit. Singlet I've raced three years now. 🟢",
     user: { name: "Jordan Kim", username: "jordan.k", tone: "bg-stone-300", avatarId: "1500648767791-00dcc994a43e" },
     photoTone: "from-yellow-200 via-amber-100 to-yellow-50",
-    photoId: "1486739985386-d4fae04ca6f7",
+    photoSrc: "/images/run-marathon.jpg",
     h: "h-72",
     runType: "race-day",
     weather: "55°F · overcast",
@@ -68,7 +68,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Cold morning layers — windbreaker over tank, half-tights.",
     user: { name: "Sasha Patel", username: "sashap", tone: "bg-rose-200", avatarId: "1438761681033-6461ffad8d80" },
     photoTone: "from-stone-200 via-rose-100 to-stone-50",
-    photoId: "1502904550040-7534597429ae",
+    photoSrc: "/images/run-cold.jpg",
     h: "h-96",
     runType: "long-run",
     weather: "38°F · windy",
@@ -88,7 +88,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Dolomites trail kit — vest, gaiters, all the gels.",
     user: { name: "Theo Marin", username: "theo.runs", tone: "bg-emerald-200", avatarId: "1507003211169-0a1dd7228f2d" },
     photoTone: "from-emerald-200 via-stone-100 to-stone-50",
-    photoId: "1517649763962-0c623066013b",
+    photoSrc: "/images/run-country.jpg",
     h: "h-80",
     runType: "trail",
     weather: "48°F · drizzle",
@@ -109,7 +109,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Track session — singlet, split shorts, and the spikes.",
     user: { name: "Owen Hart", username: "owen.h", tone: "bg-stone-400", avatarId: "1531746020798-e6953c6e8e04" },
     photoTone: "from-neutral-300 via-neutral-100 to-stone-50",
-    photoId: "1571008887538-b36bb32f4571",
+    photoSrc: "/images/run-track.jpg",
     h: "h-64",
     runType: "mens",
     weather: "70°F · sunny",
@@ -128,7 +128,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Hot day tempo — mesh tank + run skirt + visor.",
     user: { name: "Aria Lopez", username: "aria.l", tone: "bg-yellow-200", avatarId: "1573496359142-b8d87734a5a2" },
     photoTone: "from-orange-200 via-amber-100 to-yellow-50",
-    photoId: "1486218119243-13883505764c",
+    photoSrc: "/images/run-adidas.jpg",
     h: "h-72",
     runType: "womens",
     weather: "84°F · humid",
@@ -148,7 +148,7 @@ export const outfits: OutfitDetail[] = [
     caption: "First 5K kit — comfy tee + Ghosts. Felt unstoppable.",
     user: { name: "Noor Bakri", username: "noorb", tone: "bg-amber-200", avatarId: "1517841905240-472988babdf9" },
     photoTone: "from-stone-200 via-stone-100 to-amber-50",
-    photoId: "1546484959-f9a381d1330d",
+    photoSrc: "/images/run-tying.jpg",
     h: "h-60",
     runType: "beginner",
     weather: "68°F · cloudy",
@@ -166,7 +166,7 @@ export const outfits: OutfitDetail[] = [
     caption: "20-miler kit — double caffeine gel sandwich tested.",
     user: { name: "Lin Zhao", username: "linruns", tone: "bg-flora-300", avatarId: "1554151228-14d9def656e4" },
     photoTone: "from-amber-300 via-yellow-100 to-amber-50",
-    photoId: "1540497077202-7c8a3999166f",
+    photoSrc: "/images/run-marathon.jpg",
     h: "h-80",
     runType: "marathon",
     weather: "60°F · breezy",
@@ -186,7 +186,7 @@ export const outfits: OutfitDetail[] = [
     caption: "Recovery jog — soft, slouchy, slow.",
     user: { name: "Sasha Patel", username: "sashap", tone: "bg-rose-200", avatarId: "1438761681033-6461ffad8d80" },
     photoTone: "from-rose-100 via-pink-100 to-stone-50",
-    photoId: "1506629082955-511b1aa562c8",
+    photoSrc: "/images/run-sunset.jpg",
     h: "h-64",
     runType: "recovery",
     weather: "65°F · overcast",

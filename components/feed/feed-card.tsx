@@ -58,9 +58,9 @@ export function FeedCard({ post, index = 0 }: { post: FeedPost; index?: number }
       </div>
 
       <div className={cn("relative bg-gradient-to-br overflow-hidden", post.photoTone, post.photoH)}>
-        {post.photoId && (
+        {post.photoSrc && (
           <Image
-            src={unsplash(post.photoId, { w: 1000, h: 700 })}
+            src={post.photoSrc}
             alt={post.caption}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

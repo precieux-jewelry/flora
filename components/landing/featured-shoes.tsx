@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { featuredShoes } from "@/data/landing";
-import { unsplash } from "@/lib/img";
 
 export function FeaturedShoes() {
   return (
@@ -40,7 +39,7 @@ export function FeaturedShoes() {
             <Link href={`/shoes/${s.id}`} className="block">
             <div className={`relative h-48 bg-gradient-to-br ${s.bg} overflow-hidden`}>
               <Image
-                src={unsplash(s.photoId, { w: 800, h: 480 })}
+                src={s.photoSrc}
                 alt={`${s.brand} ${s.name}`}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

@@ -26,7 +26,7 @@ export function IPhonePreview() {
               shoe="Nike Vaporfly 3"
               tone="from-amber-100 to-amber-50"
               avatarId="1494790108377-be9c29b29330"
-              photoId="1530143584546-02191bc84eb5"
+              photoSrc="/images/run-sunset.jpg"
               delay={0}
             />
             <FeedCard
@@ -35,7 +35,7 @@ export function IPhonePreview() {
               shoe="Adidas Adios Pro 4"
               tone="from-yellow-100 to-yellow-50"
               avatarId="1500648767791-00dcc994a43e"
-              photoId="1486739985386-d4fae04ca6f7"
+              photoSrc="/images/run-marathon.jpg"
               delay={0.15}
             />
             <FeedCard
@@ -44,7 +44,7 @@ export function IPhonePreview() {
               shoe="Hoka Mach X"
               tone="from-stone-100 to-stone-50"
               avatarId="1438761681033-6461ffad8d80"
-              photoId="1502904550040-7534597429ae"
+              photoSrc="/images/run-track.jpg"
               delay={0.3}
             />
           </div>
@@ -62,7 +62,7 @@ function FeedCard({
   shoe,
   tone,
   avatarId,
-  photoId,
+  photoSrc,
   delay,
 }: {
   who: string;
@@ -70,7 +70,7 @@ function FeedCard({
   shoe: string;
   tone: string;
   avatarId: string;
-  photoId: string;
+  photoSrc: string;
   delay: number;
 }) {
   return (
@@ -90,7 +90,7 @@ function FeedCard({
         </div>
       </div>
       <div className={`relative h-28 bg-gradient-to-br ${tone} overflow-hidden`}>
-        <Image src={unsplash(photoId, { w: 600, h: 280 })} alt={shoe} fill sizes="280px" className="object-cover" />
+        <Image src={photoSrc} alt={shoe} fill sizes="280px" className="object-cover" />
       </div>
       <div className="px-3 py-2">
         <p className="text-[11px] font-medium">{shoe}</p>

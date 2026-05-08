@@ -21,9 +21,9 @@ export function OutfitTile({ o, index = 0 }: { o: OutfitDetail; index?: number }
         className="group block rounded-2xl overflow-hidden border border-neutral-100 bg-white relative"
       >
         <div className={cn("relative bg-gradient-to-br overflow-hidden", o.photoTone, o.h)}>
-          {o.photoId && (
+          {o.photoSrc && (
             <Image
-              src={unsplash(o.photoId, { w: 800 })}
+              src={o.photoSrc}
               alt={o.caption}
               fill
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"

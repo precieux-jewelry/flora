@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { trendingOutfits } from "@/data/landing";
-import { unsplash } from "@/lib/img";
 
 const tones = [
   "from-amber-200 to-amber-50",
@@ -47,7 +46,7 @@ export function TrendingOutfits() {
           >
             <div className={`relative ${o.h} bg-gradient-to-br ${tones[i % tones.length]} overflow-hidden`}>
               <Image
-                src={unsplash(o.photoId, { w: 800 })}
+                src={o.photoSrc}
                 alt={o.caption}
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"

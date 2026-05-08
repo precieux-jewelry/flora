@@ -22,7 +22,7 @@ export type FeedPost = {
   shoe: { brand: string; name: string };
   caption: string;
   photoTone: string;
-  photoId?: string;
+  photoSrc?: string;
   photoH: string;
   likes: number;
   comments: number;
@@ -42,7 +42,7 @@ export const feedPosts: FeedPost[] = [
     caption:
       "Sunrise long run on the bay. Felt smooth — the Vaporflys are still magic at mile 12.",
     photoTone: "from-amber-200 via-amber-100 to-orange-50",
-    photoId: "1530143584546-02191bc84eb5",
+    photoSrc: "/images/run-sunset.jpg",
     photoH: "h-72",
     likes: 248,
     comments: 32,
@@ -60,7 +60,7 @@ export const feedPosts: FeedPost[] = [
     caption:
       "Berlin marathon PR. Adios Pro 4 + the green singlet I’ve raced in three years now. 🟢",
     photoTone: "from-yellow-200 via-amber-100 to-yellow-50",
-    photoId: "1486739985386-d4fae04ca6f7",
+    photoSrc: "/images/run-marathon.jpg",
     photoH: "h-80",
     likes: 1280,
     comments: 184,
@@ -77,7 +77,7 @@ export const feedPosts: FeedPost[] = [
     shoe: { brand: "Hoka", name: "Mach X" },
     caption: "Easy shake-out before tomorrow’s tempo. Mach X feels like running on bread.",
     photoTone: "from-rose-200 via-pink-100 to-stone-50",
-    photoId: "1506629082955-511b1aa562c8",
+    photoSrc: "/images/run-country.jpg",
     photoH: "h-64",
     likes: 142,
     comments: 18,
@@ -94,7 +94,7 @@ export const feedPosts: FeedPost[] = [
     shoe: { brand: "Salomon", name: "S/Lab Pulsar" },
     caption: "Wet roots, calf shredder of a climb, and somehow the best run of the month.",
     photoTone: "from-emerald-200 via-stone-100 to-stone-50",
-    photoId: "1517649763962-0c623066013b",
+    photoSrc: "/images/run-cold.jpg",
     photoH: "h-72",
     likes: 318,
     comments: 47,
@@ -112,7 +112,7 @@ export const feedPosts: FeedPost[] = [
     caption:
       "Hot day. Mesh tank + run skirt + visor. Drank way too little water, learning lesson.",
     photoTone: "from-orange-200 via-amber-100 to-yellow-50",
-    photoId: "1486218119243-13883505764c",
+    photoSrc: "/images/run-adidas.jpg",
     photoH: "h-80",
     likes: 522,
     comments: 64,
@@ -130,7 +130,7 @@ export const feedPosts: FeedPost[] = [
     caption:
       "First time running without walk breaks!! Ghosts are forgiving on these new knees.",
     photoTone: "from-stone-200 via-stone-100 to-stone-50",
-    photoId: "1546484959-f9a381d1330d",
+    photoSrc: "/images/run-tying.jpg",
     photoH: "h-60",
     likes: 433,
     comments: 92,
@@ -147,7 +147,7 @@ export const feedPosts: FeedPost[] = [
     shoe: { brand: "Nike", name: "Streakfly 2" },
     caption: "5×1mi at 5:40. Streakfly is criminally underrated for repeats.",
     photoTone: "from-neutral-300 via-neutral-100 to-stone-50",
-    photoId: "1571008887538-b36bb32f4571",
+    photoSrc: "/images/run-track.jpg",
     photoH: "h-64",
     likes: 276,
     comments: 41,
@@ -165,7 +165,7 @@ export const feedPosts: FeedPost[] = [
     caption:
       "Last 20-miler of the cycle. Saucony + double caffeine gel sandwich worked.",
     photoTone: "from-amber-300 via-yellow-100 to-amber-50",
-    photoId: "1540497077202-7c8a3999166f",
+    photoSrc: "/images/run-marathon.jpg",
     photoH: "h-72",
     likes: 612,
     comments: 88,

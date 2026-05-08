@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, Star, X } from "lucide-react";
-import { unsplash } from "@/lib/img";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { RatingBar } from "@/components/cards/rating-bar";
@@ -53,9 +52,9 @@ export default async function ShoeDetailPage({
           <div
             className={`relative aspect-square rounded-[2rem] bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}
           >
-            {shoe.image.photoId && (
+            {shoe.image.src && (
               <Image
-                src={unsplash(shoe.image.photoId, { w: 1200, h: 1200 })}
+                src={shoe.image.src}
                 alt={`${shoe.brand} ${shoe.name}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

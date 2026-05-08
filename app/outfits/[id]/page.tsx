@@ -55,9 +55,9 @@ export default async function OutfitDetailPage({
 
         <div className="mt-6 grid lg:grid-cols-2 gap-8">
           <div className={`relative aspect-[4/5] rounded-[2rem] bg-gradient-to-br ${o.photoTone} overflow-hidden`}>
-            {o.photoId && (
+            {o.photoSrc && (
               <Image
-                src={unsplash(o.photoId, { w: 1400 })}
+                src={o.photoSrc}
                 alt={o.caption}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

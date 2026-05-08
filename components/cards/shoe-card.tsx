@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import type { ShoeReviewItem } from "@/data/shoes";
-import { unsplash } from "@/lib/img";
 
 export function ShoeCard({ shoe, index = 0 }: { shoe: ShoeReviewItem; index?: number }) {
   return (
@@ -19,9 +18,9 @@ export function ShoeCard({ shoe, index = 0 }: { shoe: ShoeReviewItem; index?: nu
         className="group block rounded-3xl border border-neutral-100 bg-white overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all"
       >
         <div className={`relative h-52 bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}>
-          {shoe.image.photoId && (
+          {shoe.image.src && (
             <Image
-              src={unsplash(shoe.image.photoId, { w: 800, h: 520 })}
+              src={shoe.image.src}
               alt={`${shoe.brand} ${shoe.name}`}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

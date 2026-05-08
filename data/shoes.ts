@@ -3,7 +3,7 @@ export type ShoeReviewItem = {
   brand: string;
   name: string;
   colorway: string;
-  image: { tone: string; mark: string; photoId?: string };
+  image: { tone: string; mark: string; src?: string };
   category: "Race Day" | "Daily Trainer" | "Tempo" | "Long Run" | "Trail" | "Recovery";
   distanceUsed: number;
   ratings: {
@@ -30,7 +30,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-amber-200 via-yellow-100 to-amber-50",
       mark: "NIKE",
-      photoId: "1542291026-7eec264c27ff",
+      src: "/images/shoe-nike-red.jpg",
     },
     category: "Race Day",
     distanceUsed: 312,
@@ -51,7 +51,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-yellow-200 via-amber-100 to-yellow-50",
       mark: "ADIDAS",
-      photoId: "1606107557195-0e29a4b5b4aa",
+      src: "/images/run-adidas.jpg",
     },
     category: "Race Day",
     distanceUsed: 240,
@@ -72,7 +72,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-stone-200 via-rose-100 to-stone-50",
       mark: "HOKA",
-      photoId: "1539185441755-769473a23570",
+      src: "/images/run-tying.jpg",
     },
     category: "Tempo",
     distanceUsed: 180,
@@ -93,7 +93,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-neutral-200 via-yellow-100 to-neutral-50",
       mark: "ASICS",
-      photoId: "1595950653106-6c9ebd614d3a",
+      src: "/images/shoe-splash.jpg",
     },
     category: "Race Day",
     distanceUsed: 154,
@@ -114,7 +114,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-stone-200 via-stone-100 to-stone-50",
       mark: "BROOKS",
-      photoId: "1608231387042-66d1773070a5",
+      src: "/images/run-country.jpg",
     },
     category: "Daily Trainer",
     distanceUsed: 410,
@@ -135,7 +135,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-emerald-200 via-stone-100 to-stone-50",
       mark: "SALOMON",
-      photoId: "1551107696-a4b0c5a0d9a2",
+      src: "/images/run-cold.jpg",
     },
     category: "Trail",
     distanceUsed: 220,
@@ -156,7 +156,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-amber-300 via-yellow-100 to-amber-50",
       mark: "SAUCONY",
-      photoId: "1556906781-9a412961c28c",
+      src: "/images/run-marathon.jpg",
     },
     category: "Race Day",
     distanceUsed: 96,
@@ -177,7 +177,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-neutral-300 via-neutral-100 to-stone-50",
       mark: "NIKE",
-      photoId: "1542219550-37153d387c27",
+      src: "/images/run-track.jpg",
     },
     category: "Tempo",
     distanceUsed: 130,

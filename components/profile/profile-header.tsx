@@ -11,9 +11,9 @@ export function ProfileHeader({ p }: { p: ProfileFull }) {
   return (
     <section>
       <div className={`relative h-44 sm:h-56 rounded-3xl bg-gradient-to-br ${p.coverTone} overflow-hidden`}>
-        {p.coverId && (
+        {p.coverSrc && (
           <Image
-            src={unsplash(p.coverId, { w: 1600, h: 600 })}
+            src={p.coverSrc}
             alt=""
             fill
             sizes="(max-width: 1024px) 100vw, 1024px"

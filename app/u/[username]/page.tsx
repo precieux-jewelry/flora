@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
-import { unsplash } from "@/lib/img";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ProfileHeader } from "@/components/profile/profile-header";
@@ -104,9 +103,9 @@ export default async function ProfilePage({
                   <div
                     className={`relative shrink-0 h-20 w-20 rounded-2xl bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}
                   >
-                    {shoe.image.photoId && (
+                    {shoe.image.src && (
                       <Image
-                        src={unsplash(shoe.image.photoId, { w: 200, h: 200 })}
+                        src={shoe.image.src}
                         alt={shoe.name}
                         fill
                         sizes="80px"

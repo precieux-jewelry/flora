@@ -31,7 +31,7 @@ export type ProfileFull = {
   avatarTone: string;
   avatarId?: string;
   coverTone: string;
-  coverId?: string;
+  coverSrc?: string;
   followers: number;
   following: number;
   pronouns?: string;
@@ -69,7 +69,7 @@ export const profiles: ProfileFull[] = [
     avatarTone: "bg-amber-300",
     avatarId: "1494790108377-be9c29b29330",
     coverTone: "from-amber-200 via-orange-100 to-yellow-50",
-    coverId: "1530143584546-02191bc84eb5",
+    coverSrc: "/images/run-sunset.jpg",
     followers: 1284,
     following: 312,
     pronouns: "she/her",
@@ -110,7 +110,7 @@ export const profiles: ProfileFull[] = [
     avatarTone: "bg-stone-300",
     avatarId: "1500648767791-00dcc994a43e",
     coverTone: "from-yellow-200 via-amber-100 to-yellow-50",
-    coverId: "1486739985386-d4fae04ca6f7",
+    coverSrc: "/images/run-marathon.jpg",
     followers: 4820,
     following: 188,
     rotation: [
@@ -146,7 +146,7 @@ export const profiles: ProfileFull[] = [
     avatarTone: "bg-amber-200",
     avatarId: "1517841905240-472988babdf9",
     coverTone: "from-stone-200 via-stone-100 to-amber-50",
-    coverId: "1546484959-f9a381d1330d",
+    coverSrc: "/images/run-tying.jpg",
     followers: 88,
     following: 142,
     rotation: [
