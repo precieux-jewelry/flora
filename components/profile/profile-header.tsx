@@ -1,15 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Sparkles } from "lucide-react";
 import type { ProfileFull } from "@/data/profiles";
 import { cn } from "@/lib/utils";
+import { unsplash } from "@/lib/img";
 
 export function ProfileHeader({ p }: { p: ProfileFull }) {
   return (
     <section>
       <div className={`relative h-44 sm:h-56 rounded-3xl bg-gradient-to-br ${p.coverTone} overflow-hidden`}>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_white,_transparent_60%)] opacity-30" />
+        {p.coverId && (
+          <Image
+            src={unsplash(p.coverId, { w: 1600, h: 600 })}
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            priority
+            className="object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
 
       <div className="-mt-12 sm:-mt-16 px-2 sm:px-4 flex flex-col sm:flex-row sm:items-end gap-5">
@@ -18,10 +30,21 @@ export function ProfileHeader({ p }: { p: ProfileFull }) {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.4 }}
           className={cn(
-            "h-24 w-24 sm:h-32 sm:w-32 rounded-full ring-4 ring-white shadow-xl",
+            "relative h-24 w-24 sm:h-32 sm:w-32 rounded-full ring-4 ring-white shadow-xl overflow-hidden",
             p.avatarTone,
           )}
-        />
+        >
+          {p.avatarId && (
+            <Image
+              src={unsplash(p.avatarId, { w: 256, h: 256 })}
+              alt={p.name}
+              fill
+              sizes="128px"
+              priority
+              className="object-cover"
+            />
+          )}
+        </motion.div>
 
         <div className="flex-1 sm:pb-3">
           <div className="flex items-center gap-2 flex-wrap">

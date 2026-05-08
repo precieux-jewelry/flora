@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { featuredShoes } from "@/data/landing";
+import { unsplash } from "@/lib/img";
 
 export function FeaturedShoes() {
   return (
@@ -16,12 +19,12 @@ export function FeaturedShoes() {
             Shoes runners are obsessed with.
           </h2>
         </div>
-        <a
-          href="#shoes"
+        <Link
+          href="/shoes"
           className="text-sm font-medium text-neutral-600 hover:text-neutral-950"
         >
           See all reviews →
-        </a>
+        </Link>
       </div>
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -34,15 +37,18 @@ export function FeaturedShoes() {
             transition={{ duration: 0.5, delay: i * 0.06 }}
             className="group relative rounded-3xl border border-neutral-100 bg-white overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all"
           >
-            <div className={`relative h-48 bg-gradient-to-br ${s.bg}`}>
-              <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-white/80 backdrop-blur px-2 py-1 rounded-full">
+            <Link href={`/shoes/${s.id}`} className="block">
+            <div className={`relative h-48 bg-gradient-to-br ${s.bg} overflow-hidden`}>
+              <Image
+                src={unsplash(s.photoId, { w: 800, h: 480 })}
+                alt={`${s.brand} ${s.name}`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform"
+              />
+              <span className="absolute top-3 left-3 z-10 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2 py-1 rounded-full">
                 {s.tag}
               </span>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-5xl font-black tracking-tighter text-neutral-900/10">
-                  {s.brand}
-                </span>
-              </div>
             </div>
             <div className="p-5">
               <p className="text-xs text-neutral-500 uppercase tracking-widest">
@@ -63,6 +69,7 @@ export function FeaturedShoes() {
                 </span>
               </div>
             </div>
+            </Link>
           </motion.article>
         ))}
       </div>

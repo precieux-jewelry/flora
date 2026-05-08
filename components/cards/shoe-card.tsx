@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import type { ShoeReviewItem } from "@/data/shoes";
+import { unsplash } from "@/lib/img";
 
 export function ShoeCard({ shoe, index = 0 }: { shoe: ShoeReviewItem; index?: number }) {
   return (
@@ -16,18 +18,22 @@ export function ShoeCard({ shoe, index = 0 }: { shoe: ShoeReviewItem; index?: nu
         href={`/shoes/${shoe.id}`}
         className="group block rounded-3xl border border-neutral-100 bg-white overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all"
       >
-        <div className={`relative h-52 bg-gradient-to-br ${shoe.image.tone}`}>
-          <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2 py-1 rounded-full">
+        <div className={`relative h-52 bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}>
+          {shoe.image.photoId && (
+            <Image
+              src={unsplash(shoe.image.photoId, { w: 800, h: 520 })}
+              alt={`${shoe.brand} ${shoe.name}`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform"
+            />
+          )}
+          <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2 py-1 rounded-full z-10">
             {shoe.category}
           </span>
-          <span className="absolute top-3 right-3 text-xs font-semibold bg-neutral-950 text-white px-2.5 py-1 rounded-full">
+          <span className="absolute top-3 right-3 text-xs font-semibold bg-neutral-950 text-white px-2.5 py-1 rounded-full z-10">
             ${shoe.price}
           </span>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-6xl font-black tracking-tighter text-neutral-900/10 group-hover:scale-105 transition-transform">
-              {shoe.image.mark}
-            </span>
-          </div>
         </div>
 
         <div className="p-5">

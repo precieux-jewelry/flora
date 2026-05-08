@@ -29,7 +29,9 @@ export type ProfileFull = {
   racesCompleted: number;
   favoriteShoe: string;
   avatarTone: string;
+  avatarId?: string;
   coverTone: string;
+  coverId?: string;
   followers: number;
   following: number;
   pronouns?: string;
@@ -65,7 +67,9 @@ export const profiles: ProfileFull[] = [
     racesCompleted: 14,
     favoriteShoe: "Nike Vaporfly 3",
     avatarTone: "bg-amber-300",
+    avatarId: "1494790108377-be9c29b29330",
     coverTone: "from-amber-200 via-orange-100 to-yellow-50",
+    coverId: "1530143584546-02191bc84eb5",
     followers: 1284,
     following: 312,
     pronouns: "she/her",
@@ -104,7 +108,9 @@ export const profiles: ProfileFull[] = [
     racesCompleted: 32,
     favoriteShoe: "Adidas Adios Pro 4",
     avatarTone: "bg-stone-300",
+    avatarId: "1500648767791-00dcc994a43e",
     coverTone: "from-yellow-200 via-amber-100 to-yellow-50",
+    coverId: "1486739985386-d4fae04ca6f7",
     followers: 4820,
     following: 188,
     rotation: [
@@ -138,7 +144,9 @@ export const profiles: ProfileFull[] = [
     racesCompleted: 2,
     favoriteShoe: "Brooks Ghost 16",
     avatarTone: "bg-amber-200",
+    avatarId: "1517841905240-472988babdf9",
     coverTone: "from-stone-200 via-stone-100 to-amber-50",
+    coverId: "1546484959-f9a381d1330d",
     followers: 88,
     following: 142,
     rotation: [

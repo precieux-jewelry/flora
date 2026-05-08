@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Heart, MessageCircle, Bookmark } from "lucide-react";
+import { unsplash } from "@/lib/img";
 
 export function IPhonePreview() {
   return (
@@ -23,6 +25,8 @@ export function IPhonePreview() {
               run="Long run · 14 mi"
               shoe="Nike Vaporfly 3"
               tone="from-amber-100 to-amber-50"
+              avatarId="1494790108377-be9c29b29330"
+              photoId="1530143584546-02191bc84eb5"
               delay={0}
             />
             <FeedCard
@@ -30,6 +34,8 @@ export function IPhonePreview() {
               run="Race day · Berlin"
               shoe="Adidas Adios Pro 4"
               tone="from-yellow-100 to-yellow-50"
+              avatarId="1500648767791-00dcc994a43e"
+              photoId="1486739985386-d4fae04ca6f7"
               delay={0.15}
             />
             <FeedCard
@@ -37,6 +43,8 @@ export function IPhonePreview() {
               run="Tempo · 6 mi"
               shoe="Hoka Mach X"
               tone="from-stone-100 to-stone-50"
+              avatarId="1438761681033-6461ffad8d80"
+              photoId="1502904550040-7534597429ae"
               delay={0.3}
             />
           </div>
@@ -53,12 +61,16 @@ function FeedCard({
   run,
   shoe,
   tone,
+  avatarId,
+  photoId,
   delay,
 }: {
   who: string;
   run: string;
   shoe: string;
   tone: string;
+  avatarId: string;
+  photoId: string;
   delay: number;
 }) {
   return (
@@ -69,13 +81,17 @@ function FeedCard({
       className="rounded-2xl border border-neutral-100 bg-white overflow-hidden"
     >
       <div className="flex items-center gap-2 px-3 py-2">
-        <span className="h-7 w-7 rounded-full bg-neutral-200" />
+        <span className="relative h-7 w-7 rounded-full bg-neutral-200 overflow-hidden">
+          <Image src={unsplash(avatarId, { w: 56, h: 56 })} alt={who} fill sizes="28px" className="object-cover" />
+        </span>
         <div className="leading-tight">
           <p className="text-xs font-semibold">{who}</p>
           <p className="text-[10px] text-neutral-500">{run}</p>
         </div>
       </div>
-      <div className={`h-28 bg-gradient-to-br ${tone}`} />
+      <div className={`relative h-28 bg-gradient-to-br ${tone} overflow-hidden`}>
+        <Image src={unsplash(photoId, { w: 600, h: 280 })} alt={shoe} fill sizes="280px" className="object-cover" />
+      </div>
       <div className="px-3 py-2">
         <p className="text-[11px] font-medium">{shoe}</p>
         <div className="mt-1.5 flex items-center gap-3 text-neutral-500">

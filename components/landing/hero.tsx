@@ -29,7 +29,7 @@ export function Hero() {
           >
             The social app where runners share{" "}
             <span className="bg-gradient-to-r from-flora-500 to-flora-700 bg-clip-text text-transparent">
-              shoes, outfits,
+              shoes, outfits, reviews,
             </span>{" "}
             and race-day gear.
           </motion.h1>

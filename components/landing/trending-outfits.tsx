@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { trendingOutfits } from "@/data/landing";
+import { unsplash } from "@/lib/img";
 
 const tones = [
   "from-amber-200 to-amber-50",
@@ -24,12 +27,12 @@ export function TrendingOutfits() {
             What runners are wearing this week.
           </h2>
         </div>
-        <a
-          href="#outfits"
+        <Link
+          href="/outfits"
           className="text-sm font-medium text-neutral-600 hover:text-neutral-950"
         >
           Explore the grid →
-        </a>
+        </Link>
       </div>
 
       <div className="mt-10 columns-2 md:columns-3 gap-4 [column-fill:_balance]">
@@ -42,7 +45,15 @@ export function TrendingOutfits() {
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="mb-4 break-inside-avoid rounded-2xl overflow-hidden border border-neutral-100 bg-white"
           >
-            <div className={`${o.h} bg-gradient-to-br ${tones[i % tones.length]}`} />
+            <div className={`relative ${o.h} bg-gradient-to-br ${tones[i % tones.length]} overflow-hidden`}>
+              <Image
+                src={unsplash(o.photoId, { w: 800 })}
+                alt={o.caption}
+                fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-cover"
+              />
+            </div>
             <div className="p-3">
               <p className="text-sm font-medium">{o.who}</p>
               <p className="text-xs text-neutral-500">{o.caption}</p>

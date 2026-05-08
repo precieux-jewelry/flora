@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
+import { unsplash } from "@/lib/img";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ProfileHeader } from "@/components/profile/profile-header";
@@ -100,8 +102,18 @@ export default async function ProfilePage({
                   className="rounded-3xl border border-neutral-100 bg-white p-5 hover:shadow-md transition flex gap-4"
                 >
                   <div
-                    className={`shrink-0 h-20 w-20 rounded-2xl bg-gradient-to-br ${shoe.image.tone}`}
-                  />
+                    className={`relative shrink-0 h-20 w-20 rounded-2xl bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}
+                  >
+                    {shoe.image.photoId && (
+                      <Image
+                        src={unsplash(shoe.image.photoId, { w: 200, h: 200 })}
+                        alt={shoe.name}
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[11px] uppercase tracking-widest text-neutral-500">
                       {shoe.brand}

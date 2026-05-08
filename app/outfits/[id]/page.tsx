@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Bookmark, Cloud, Heart, Share2 } from "lucide-react";
+import { unsplash } from "@/lib/img";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { outfits, getOutfit } from "@/data/outfits";
@@ -53,7 +55,17 @@ export default async function OutfitDetailPage({
 
         <div className="mt-6 grid lg:grid-cols-2 gap-8">
           <div className={`relative aspect-[4/5] rounded-[2rem] bg-gradient-to-br ${o.photoTone} overflow-hidden`}>
-            <span className="absolute top-5 left-5 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2.5 py-1 rounded-full">
+            {o.photoId && (
+              <Image
+                src={unsplash(o.photoId, { w: 1400 })}
+                alt={o.caption}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+                className="object-cover"
+              />
+            )}
+            <span className="absolute top-5 left-5 z-10 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2.5 py-1 rounded-full">
               {o.runType.replace("-", " ")}
             </span>
           </div>
@@ -63,7 +75,17 @@ export default async function OutfitDetailPage({
               href={`/u/${o.user.username}`}
               className="inline-flex items-center gap-3 group"
             >
-              <div className={`h-11 w-11 rounded-full ring-2 ring-white shadow ${o.user.tone}`} />
+              <div className={`relative h-11 w-11 rounded-full ring-2 ring-white shadow overflow-hidden ${o.user.tone}`}>
+                {o.user.avatarId && (
+                  <Image
+                    src={unsplash(o.user.avatarId, { w: 88, h: 88 })}
+                    alt={o.user.name}
+                    fill
+                    sizes="44px"
+                    className="object-cover"
+                  />
+                )}
+              </div>
               <div className="leading-tight">
                 <p className="text-sm font-semibold group-hover:underline">
                   {o.user.name}

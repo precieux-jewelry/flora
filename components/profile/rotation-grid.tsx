@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RotationShoe } from "@/data/profiles";
+import { getShoe } from "@/data/shoes";
+import { unsplash } from "@/lib/img";
 
 const statusColor: Record<RotationShoe["status"], string> = {
   Active: "bg-emerald-100 text-emerald-700",
@@ -15,14 +18,24 @@ export function RotationGrid({ rotation }: { rotation: RotationShoe[] }) {
     <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
       {rotation.map((s) => {
         const wear = Math.min(100, (s.miles / 500) * 100);
+        const shoe = getShoe(s.id);
         return (
           <Link
             key={s.id}
             href={`/shoes/${s.id}`}
             className="group rounded-3xl border border-neutral-100 bg-white overflow-hidden hover:shadow-lg transition"
           >
-            <div className={`relative h-32 bg-gradient-to-br ${s.tone}`}>
-              <span className={cn("absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full", statusColor[s.status])}>
+            <div className={`relative h-32 bg-gradient-to-br ${s.tone} overflow-hidden`}>
+              {shoe?.image.photoId && (
+                <Image
+                  src={unsplash(shoe.image.photoId, { w: 600, h: 320 })}
+                  alt={`${s.brand} ${s.name}`}
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform"
+                />
+              )}
+              <span className={cn("absolute top-3 left-3 z-10 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full", statusColor[s.status])}>
                 {s.status}
               </span>
             </div>

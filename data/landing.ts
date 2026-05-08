@@ -1,6 +1,6 @@
 export const featuredShoes = [
   {
-    id: "1",
+    id: "vaporfly-3",
     brand: "Nike",
     name: "Vaporfly 3",
     color: "Volt / Black",
@@ -8,9 +8,10 @@ export const featuredShoes = [
     reviews: 1284,
     tag: "Race Day",
     bg: "from-amber-100 to-amber-50",
+    photoId: "1542291026-7eec264c27ff",
   },
   {
-    id: "2",
+    id: "mach-x",
     brand: "Hoka",
     name: "Mach X",
     color: "Sand / Coral",
@@ -18,9 +19,10 @@ export const featuredShoes = [
     reviews: 932,
     tag: "Long Run",
     bg: "from-stone-100 to-stone-50",
+    photoId: "1539185441755-769473a23570",
   },
   {
-    id: "3",
+    id: "adios-pro-4",
     brand: "Adidas",
     name: "Adios Pro 4",
     color: "Cream / Gold",
@@ -28,9 +30,10 @@ export const featuredShoes = [
     reviews: 1102,
     tag: "Marathon",
     bg: "from-yellow-100 to-yellow-50",
+    photoId: "1606107557195-0e29a4b5b4aa",
   },
   {
-    id: "4",
+    id: "metaspeed-sky",
     brand: "Asics",
     name: "Metaspeed Sky",
     color: "White / Sun",
@@ -38,16 +41,17 @@ export const featuredShoes = [
     reviews: 778,
     tag: "Tempo",
     bg: "from-neutral-100 to-neutral-50",
+    photoId: "1595950653106-6c9ebd614d3a",
   },
 ];
 
 export const trendingOutfits = [
-  { id: "o1", who: "Maya R.", caption: "Sunrise long run kit", h: "h-72" },
-  { id: "o2", who: "Jordan K.", caption: "Race day fit · Berlin", h: "h-56" },
-  { id: "o3", who: "Sasha P.", caption: "Cold morning layers", h: "h-80" },
-  { id: "o4", who: "Theo M.", caption: "Track session set", h: "h-60" },
-  { id: "o5", who: "Aria L.", caption: "Trail kit · Dolomites", h: "h-72" },
-  { id: "o6", who: "Noor B.", caption: "Recovery jog comfy", h: "h-56" },
+  { id: "o1", who: "Maya R.", caption: "Sunrise long run kit", h: "h-72", photoId: "1530143584546-02191bc84eb5" },
+  { id: "o2", who: "Jordan K.", caption: "Race day fit · Berlin", h: "h-56", photoId: "1486739985386-d4fae04ca6f7" },
+  { id: "o3", who: "Sasha P.", caption: "Cold morning layers", h: "h-80", photoId: "1502904550040-7534597429ae" },
+  { id: "o4", who: "Theo M.", caption: "Track session set", h: "h-60", photoId: "1571008887538-b36bb32f4571" },
+  { id: "o5", who: "Aria L.", caption: "Trail kit · Dolomites", h: "h-72", photoId: "1517649763962-0c623066013b" },
+  { id: "o6", who: "Noor B.", caption: "Recovery jog comfy", h: "h-56", photoId: "1486218119243-13883505764c" },
 ];
 
 export const howItWorks = [

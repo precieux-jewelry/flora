@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Check, Star, X } from "lucide-react";
+import { unsplash } from "@/lib/img";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { RatingBar } from "@/components/cards/rating-bar";
@@ -51,14 +53,19 @@ export default async function ShoeDetailPage({
           <div
             className={`relative aspect-square rounded-[2rem] bg-gradient-to-br ${shoe.image.tone} overflow-hidden`}
           >
-            <span className="absolute top-5 left-5 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2.5 py-1 rounded-full">
+            {shoe.image.photoId && (
+              <Image
+                src={unsplash(shoe.image.photoId, { w: 1200, h: 1200 })}
+                alt={`${shoe.brand} ${shoe.name}`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+                className="object-cover"
+              />
+            )}
+            <span className="absolute top-5 left-5 z-10 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2.5 py-1 rounded-full">
               {shoe.category}
             </span>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[8rem] font-black tracking-tighter text-neutral-900/10">
-                {shoe.image.mark}
-              </span>
-            </div>
           </div>
 
           <div>
@@ -117,7 +124,7 @@ export default async function ShoeDetailPage({
         <section className="mt-14 rounded-[2rem] bg-white border border-neutral-100 p-6 sm:p-10">
           <div className="flex items-center gap-3">
             <div
-              className={`h-10 w-10 rounded-full ring-2 ring-white shadow ${shoe.reviewer.tone}`}
+              className={`relative h-10 w-10 rounded-full ring-2 ring-white shadow overflow-hidden ${shoe.reviewer.tone}`}
             />
             <div className="leading-tight">
               <p className="text-sm font-semibold">{shoe.reviewer.name}</p>

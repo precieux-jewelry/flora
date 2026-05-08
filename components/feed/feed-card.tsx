@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Bookmark, Heart, MessageCircle, MoreHorizontal, Share2 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import type { FeedPost } from "@/data/feed";
+import { unsplash } from "@/lib/img";
 
 export function FeedCard({ post, index = 0 }: { post: FeedPost; index?: number }) {
   const [liked, setLiked] = useState(false);
@@ -20,7 +22,17 @@ export function FeedCard({ post, index = 0 }: { post: FeedPost; index?: number }
       className="rounded-3xl bg-white border border-neutral-100 overflow-hidden hover:shadow-lg transition-shadow"
     >
       <header className="flex items-center gap-3 px-5 py-4">
-        <div className={cn("h-10 w-10 rounded-full ring-2 ring-white shadow", post.user.avatarTone)} />
+        <div className={cn("relative h-10 w-10 rounded-full ring-2 ring-white shadow overflow-hidden", post.user.avatarTone)}>
+          {post.user.avatarId && (
+            <Image
+              src={unsplash(post.user.avatarId, { w: 80, h: 80 })}
+              alt={post.user.name}
+              fill
+              sizes="40px"
+              className="object-cover"
+            />
+          )}
+        </div>
         <div className="leading-tight flex-1 min-w-0">
           <p className="text-sm font-semibold truncate">{post.user.name}</p>
           <p className="text-xs text-neutral-500 truncate">
@@ -45,8 +57,17 @@ export function FeedCard({ post, index = 0 }: { post: FeedPost; index?: number }
         </span>
       </div>
 
-      <div className={cn("relative bg-gradient-to-br", post.photoTone, post.photoH)}>
-        <span className="absolute bottom-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-white/80 backdrop-blur px-2 py-1 rounded-full">
+      <div className={cn("relative bg-gradient-to-br overflow-hidden", post.photoTone, post.photoH)}>
+        {post.photoId && (
+          <Image
+            src={unsplash(post.photoId, { w: 1000, h: 700 })}
+            alt={post.caption}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        )}
+        <span className="absolute bottom-3 left-3 z-10 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2 py-1 rounded-full">
           Outfit
         </span>
       </div>
