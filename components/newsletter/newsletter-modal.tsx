@@ -104,7 +104,7 @@ export function NewsletterModal() {
                 id="newsletter-title"
                 className="text-2xl sm:text-[1.65rem] font-semibold tracking-tight leading-tight"
               >
-                Join the Flora running community.
+                Join the Flora running fit check community.
               </h2>
               <p className="mt-2 text-sm text-neutral-600">
                 One short email a week. Curated kits, race-day picks, and
