@@ -1,17 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { joinWaitlist } from "@/app/actions/waitlist";
 
 export function Waitlist() {
-  const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
 
-  function onSubmit(e: React.FormEvent) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const email = String(data.get("email") ?? "");
     if (!email) return;
-    setDone(true);
+    setError(null);
+    startTransition(async () => {
+      const res = await joinWaitlist(email);
+      if (res.ok) {
+        setDone(true);
+      } else {
+        setError(res.error);
+      }
+    });
   }
 
   return (
@@ -50,20 +62,26 @@ export function Waitlist() {
             >
               <input
                 type="email"
+                name="email"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@runfast.com"
                 className="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/15 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-flora-400"
               />
               <button
                 type="submit"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-flora-500 text-neutral-950 font-semibold hover:bg-flora-400 transition"
+                disabled={pending}
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-flora-500 text-neutral-950 font-semibold hover:bg-flora-400 transition disabled:opacity-60 disabled:hover:bg-flora-500"
               >
-                Join waitlist
+                {pending ? "Joining…" : "Join waitlist"}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </form>
+          )}
+
+          {error && (
+            <p className="mt-3 text-xs text-rose-300" role="alert">
+              {error}
+            </p>
           )}
 
           <p className="mt-4 text-xs text-neutral-400">

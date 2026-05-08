@@ -58,7 +58,23 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 ```
 
-Never commit real keys.
+Never commit real keys. The waitlist form falls back to a no-op when these
+vars are missing, so the landing page still works in dev without Supabase.
+
+---
+
+## Supabase setup
+
+1. Create a new project at [supabase.com](https://supabase.com).
+2. Open **SQL Editor** → paste the contents of [`supabase/schema.sql`](supabase/schema.sql) → Run.
+   This creates `profiles`, `shoe_reviews`, `outfit_posts`, `comments`, `likes`,
+   `saved_posts`, `waitlist`, plus RLS policies and a signup trigger that auto-creates
+   a profile row.
+3. **Project Settings → API** → copy the `URL` and `anon` `public` key into `.env.local`.
+4. Restart `npm run dev`. The landing waitlist form now writes real rows.
+
+The `service_role` key is **never** referenced from client code. Use it only in
+secure server contexts (admin tools, scheduled jobs).
 
 ---
 
