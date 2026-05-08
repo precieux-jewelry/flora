@@ -104,7 +104,9 @@ export function NewsletterModal() {
                 id="newsletter-title"
                 className="text-2xl sm:text-[1.65rem] font-semibold tracking-tight leading-tight"
               >
-                Join the Flora running fit check community.
+                Join the Flora running
+                <br />
+                fit check community.
               </h2>
               <p className="mt-2 text-sm text-neutral-600">
                 One short email a week. Curated kits, race-day picks, and
@@ -140,13 +142,6 @@ export function NewsletterModal() {
                       {error}
                     </p>
                   )}
-                  <button
-                    type="button"
-                    onClick={dismiss}
-                    className="block mx-auto text-xs text-neutral-500 hover:text-neutral-800 underline-offset-2 hover:underline"
-                  >
-                    Maybe later
-                  </button>
                 </form>
               )}
             </div>
