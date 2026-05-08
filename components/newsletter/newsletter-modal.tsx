@@ -109,7 +109,11 @@ export function NewsletterModal() {
                 fit check community.
               </h2>
               <p className="mt-2 text-sm text-neutral-600">
-                Enter to win a free pair of running shoes of your choice.
+                Enter to win a free pair of running shoes of your choice —{" "}
+                <span className="font-semibold text-neutral-950">
+                  $300+ worth of value
+                </span>
+                .
               </p>
 
               {done ? (
