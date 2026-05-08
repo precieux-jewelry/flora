@@ -20,10 +20,10 @@ export const metadata = {
 };
 
 const detected = [
-  { id: 1, label: "Nike Vaporfly 3", category: "Shoes", price: "$260", used: "$140" },
-  { id: 2, label: "Tracksmith Harrier Mesh", category: "Top", price: "$78", used: "$32" },
-  { id: 3, label: "Bandit Stride 5\"", category: "Shorts", price: "$58", used: "$24" },
-  { id: 4, label: "Goodr Carl's Inferno", category: "Sunglasses", price: "$25", used: "$12" },
+  { id: 1, label: "Nike Pegasus Plus", category: "Shoes", price: "$180", used: "$95" },
+  { id: 2, label: "Bandit Race Day Singlet", category: "Top", price: "$72", used: "$28" },
+  { id: 3, label: "Bandit 5\" Shorts", category: "Shorts", price: "$58", used: "$22" },
+  { id: 4, label: "Maurten Gel 100 Caf · ×3", category: "Fuel", price: "$13", used: "—" },
 ];
 
 const flow = [
@@ -94,8 +94,8 @@ export default function ScannerPage() {
             <div className="relative rounded-[2rem] border border-neutral-200 bg-white shadow-2xl overflow-hidden">
               <div className="relative aspect-[4/5]">
                 <Image
-                  src="/images/run-marathon.jpg"
-                  alt="Scanning a runner's race-day fit"
+                  src="/images/scanner-boston-flatlay.jpg"
+                  alt="Scanning a runner's Boston Marathon race-day flatlay"
                   fill
                   sizes="(max-width: 1024px) 100vw, 480px"
                   priority
@@ -106,11 +106,12 @@ export default function ScannerPage() {
                   <div className="absolute inset-4 border border-flora-400/80 rounded-2xl" />
                   <div className="absolute inset-x-4 top-1/3 h-px bg-flora-400 shadow-[0_0_12px_2px] shadow-flora-400/50" />
                 </div>
-                {/* Detection pins */}
+                {/* Detection pins — positioned for the Boston flatlay */}
                 {[
-                  { top: "12%", left: "32%", label: "Top" },
-                  { top: "44%", left: "44%", label: "Shorts" },
-                  { top: "78%", left: "30%", label: "Shoes" },
+                  { top: "26%", left: "50%", label: "Top" },
+                  { top: "62%", left: "47%", label: "Shorts" },
+                  { top: "78%", left: "20%", label: "Shoes" },
+                  { top: "75%", left: "62%", label: "Fuel" },
                 ].map((p) => (
                   <div
                     key={p.label}
