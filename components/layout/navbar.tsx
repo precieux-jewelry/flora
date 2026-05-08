@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getCurrentUser } from "@/lib/supabase/auth";
 import { UserMenu } from "./user-menu";
@@ -15,9 +16,15 @@ export async function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white/75 border-b border-[var(--color-border)]">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between relative">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="inline-block h-6 w-6 rounded-full bg-flora-500" />
-          <span>flora</span>
+        <Link href="/" aria-label="Flora home" className="flex items-center">
+          <Image
+            src="/flora-wordmark.png"
+            alt="Flora"
+            width={384}
+            height={256}
+            priority
+            className="h-9 w-auto rounded-md"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-600">

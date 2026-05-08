@@ -1,12 +1,17 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="border-t border-[var(--color-border)] mt-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid gap-10 md:grid-cols-4 text-sm">
         <div className="space-y-3">
-          <div className="flex items-center gap-2 font-semibold">
-            <span className="inline-block h-5 w-5 rounded-full bg-flora-500" />
-            flora
-          </div>
+          <Image
+            src="/flora-wordmark.png"
+            alt="Flora"
+            width={384}
+            height={256}
+            className="h-8 w-auto rounded-md"
+          />
           <p className="text-neutral-600 max-w-xs">
             The social app where runners share shoes, outfits, and race-day gear.
           </p>

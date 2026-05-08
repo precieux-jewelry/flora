@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -15,12 +16,14 @@ export function AuthCard({
   return (
     <main className="min-h-[80vh] flex items-center justify-center px-5 py-10">
       <div className="w-full max-w-md">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 font-semibold tracking-tight text-neutral-700"
-        >
-          <span className="inline-block h-6 w-6 rounded-full bg-flora-500" />
-          flora
+        <Link href="/" aria-label="Flora home" className="inline-flex">
+          <Image
+            src="/flora-wordmark.png"
+            alt="Flora"
+            width={384}
+            height={256}
+            className="h-9 w-auto rounded-md"
+          />
         </Link>
 
         <div className="mt-6 rounded-3xl bg-white border border-neutral-100 p-7 shadow-sm">
