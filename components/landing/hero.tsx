@@ -40,8 +40,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-5 text-lg text-neutral-600 max-w-xl"
           >
-            Honest reviews. Real mileage. The fits people actually race in.
-            Flora is your running rotation, in one place.
+            Discover what runners actually wear, train, and race in — from the
+            best running shoes for you to marathon-day outfits and everyday gear.
           </motion.p>
 
           <motion.div
