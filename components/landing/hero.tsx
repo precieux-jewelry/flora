@@ -48,20 +48,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="mt-8 flex flex-col sm:flex-row gap-3"
+            className="mt-8"
           >
             <a
-              href="#waitlist"
+              href="/shoes"
               className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-800 transition"
             >
-              Join waitlist
+              Explore reviews and join the movement
               <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-            <a
-              href="/shoes"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-neutral-200 font-medium hover:bg-neutral-50 transition"
-            >
-              Explore reviews
             </a>
           </motion.div>
 
