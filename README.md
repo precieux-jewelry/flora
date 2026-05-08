@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flora
 
-## Getting Started
+The social app + website where runners share and review their **shoes, outfits, race-day gear, and fueling setups**.
 
-First, run the development server:
+> Inspired by the cleanliness of Runna, the social energy of Strava, the discovery feel of Pinterest, and the premium product cards of Nike. Flora is its own thing — not a clone of any of them.
+
+---
+
+## Tech stack
+
+- **Next.js 16** (App Router) + TypeScript
+- **Tailwind CSS v4**
+- **shadcn/ui** (added incrementally)
+- **Framer Motion** for motion
+- **Supabase** for auth + database
+- Deployed on **Vercel**
+
+---
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in Supabase keys when ready
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Folder structure
 
-## Learn More
+```
+app/                  # Next.js App Router routes
+components/
+  ui/                 # primitive UI (shadcn/ui)
+  layout/             # navbar, footer, shells
+  cards/              # shoe cards, outfit cards, etc.
+  feed/               # feed-related components
+  profile/            # profile page sections
+  forms/              # add-review, add-outfit, waitlist
+lib/                  # helpers (cn, supabase clients)
+data/                 # placeholder/seed data
+types/                # shared TypeScript types
+supabase/             # SQL schema + migrations
+public/               # static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` → `.env.local` and fill in:
 
-## Deploy on Vercel
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Never commit real keys.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Build phases
+
+This app is built in strict phases:
+
+- **Phase 0** – Project setup _(current)_
+- **Phase 1** – Landing website
+- **Phase 2** – Explore feed
+- **Phase 3** – Shoe review system
+- **Phase 4** – Runner profiles
+- **Phase 5** – Outfit discovery
+- **Phase 6** – Supabase schema
+- **Phase 7** – Auth + user actions
+- **Phase 8** – Vercel deployment
+
+---
+
+## Deployment (Vercel)
+
+1. Push this repo to GitHub.
+2. Import the repo on [vercel.com/new](https://vercel.com/new).
+3. Framework preset: **Next.js** (auto-detected).
+4. Add environment variables in **Project Settings → Environment Variables**:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+5. Deploy. Vercel will run `next build` automatically.
+
+For local production check: `npm run build && npm start`.
