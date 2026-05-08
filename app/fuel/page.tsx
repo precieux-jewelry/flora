@@ -28,9 +28,7 @@ export default function FuelPage() {
             </span>
           </h1>
           <p className="mt-4 max-w-xl text-neutral-600">
-            Gels, chews, drink mix, real-food bars — what actually goes down at
-            mile 22. Reviews coming from real marathoners, ultra-runners, and
-            5K beginners.
+            See the best snacks and drinks runners use to get energy on long runs.
           </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <Link

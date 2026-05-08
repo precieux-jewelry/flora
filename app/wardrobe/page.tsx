@@ -41,10 +41,7 @@ export default function WardrobePage() {
                 </span>
               </h1>
               <p className="mt-3 max-w-xl text-neutral-600">
-                Your race-day fit archive. Post the kits you wore at every 10K,
-                half, full, ultra, and tempo Tuesday. Look back at what worked
-                — and steal from your past self when you’re standing in front
-                of the closet at 5am.
+                Save the outfits you wore for every race so you can see what worked best.
               </p>
             </div>
 

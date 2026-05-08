@@ -66,10 +66,7 @@ export default function ScannerPage() {
               </span>
             </h1>
             <p className="mt-4 max-w-xl text-neutral-600">
-              Take a picture of any runner’s fit — yours, a Strava friend’s,
-              someone you saw on a long run. Flora identifies every piece and
-              shows where to buy it new <em>or</em> used from runners
-              reselling their old gear.
+              Snap a photo of any runner’s outfit and we’ll tell you what they’re wearing and where to buy it new or used.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <Link
