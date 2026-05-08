@@ -14,9 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Flora — The social app for runners",
+  metadataBase: new URL("https://flora-beta-two.vercel.app"),
+  title: "The social app for runners, fits, and shoe reviews",
   description:
-    "Flora is the social platform where runners share and review their shoes, outfits, race-day gear, and fueling setups.",
+    "Flora is the social app for runners — share your fits, review your shoes, and find race-day fuel that actually works.",
+  openGraph: {
+    title: "The social app for runners, fits, and shoe reviews",
+    description:
+      "Flora is the social app for runners — share your fits, review your shoes, and find race-day fuel that actually works.",
+    siteName: "Flora",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The social app for runners, fits, and shoe reviews",
+    description:
+      "Flora is the social app for runners — share your fits, review your shoes, and find race-day fuel that actually works.",
+  },
 };
 
 export const viewport = {
