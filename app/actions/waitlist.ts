@@ -8,7 +8,10 @@ export type WaitlistResult =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export async function joinWaitlist(email: string): Promise<WaitlistResult> {
+export async function joinWaitlist(
+  email: string,
+  source: string = "landing",
+): Promise<WaitlistResult> {
   const trimmed = email.trim().toLowerCase();
   if (!EMAIL_RE.test(trimmed)) return { ok: false, error: "Invalid email address." };
 
@@ -23,7 +26,7 @@ export async function joinWaitlist(email: string): Promise<WaitlistResult> {
   const supabase = await createSupabaseServerClient();
   const { error } = await supabase
     .from("waitlist")
-    .insert({ email: trimmed, source: "landing" });
+    .insert({ email: trimmed, source });
 
   if (error) {
     if (error.code === "23505") return { ok: true };
