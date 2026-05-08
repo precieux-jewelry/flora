@@ -96,12 +96,42 @@ This app is built in strict phases:
 
 ## Deployment (Vercel)
 
-1. Push this repo to GitHub.
-2. Import the repo on [vercel.com/new](https://vercel.com/new).
-3. Framework preset: **Next.js** (auto-detected).
-4. Add environment variables in **Project Settings → Environment Variables**:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-5. Deploy. Vercel will run `next build` automatically.
+### 1. Push to GitHub
 
-For local production check: `npm run build && npm start`.
+```bash
+gh repo create flora --public --source=. --remote=origin --push
+# or, manually:
+# git remote add origin git@github.com:<you>/flora.git
+# git push -u origin main
+```
+
+### 2. Import on Vercel
+
+1. Open [vercel.com/new](https://vercel.com/new) and pick the `flora` repo.
+2. **Framework preset** is auto-detected as **Next.js** — leave defaults.
+3. Build command: `next build` · Output: `.next` · Install: `npm install` (all auto).
+
+### 3. Add environment variables
+
+In **Project Settings → Environment Variables**, add for **Production** _and_ **Preview**:
+
+| Name                            | Value                          |
+| ------------------------------- | ------------------------------ |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Supabase project URL           |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase `anon` `public` key   |
+
+> The `service_role` key must **never** be added here. It belongs only in
+> server-side admin tooling.
+
+### 4. Deploy
+
+Hit **Deploy**. Vercel builds, runs `next build`, prerenders the static pages
+(`/`, `/explore`, `/shoes`, `/outfits`, all 8 shoe detail pages, all 9 outfit
+detail pages, all 3 profile pages, `/login`, `/signup`), and ships the
+middleware as an Edge Function. The auth/session cookie flow works out of the
+box with the SSR client.
+
+### Sanity check
+
+Locally: `npm run lint && npm run build && npm start` — confirm a clean prod
+build before pushing.
