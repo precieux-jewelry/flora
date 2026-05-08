@@ -109,8 +109,7 @@ export function NewsletterModal() {
                 fit check community.
               </h2>
               <p className="mt-2 text-sm text-neutral-600">
-                One short email a week. Curated kits, race-day picks, and
-                runner-tested gear — straight from the community.
+                Enter to win a free pair of running shoes of your choice.
               </p>
 
               {done ? (
