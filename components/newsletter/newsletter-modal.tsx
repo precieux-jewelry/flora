@@ -7,7 +7,7 @@ import Image from "next/image";
 import { joinWaitlist } from "@/app/actions/waitlist";
 
 const STORAGE_KEY = "flora_newsletter_dismissed";
-const DELAY_MS = 10_000;
+const DELAY_MS = 5_000;
 
 export function NewsletterModal() {
   const [open, setOpen] = useState(false);
@@ -104,16 +104,16 @@ export function NewsletterModal() {
                 id="newsletter-title"
                 className="text-2xl sm:text-[1.65rem] font-semibold tracking-tight leading-tight"
               >
-                Join the Flora running
+                Win a free pair of
                 <br />
-                fit check community.
+                running shoes.
               </h2>
               <p className="mt-2 text-sm text-neutral-600">
-                Enter to win a free pair of running shoes of your choice —{" "}
+                Join the Flora running fit check community —{" "}
                 <span className="font-semibold text-neutral-950">
                   $300+ worth of value
                 </span>
-                .
+                , your pick.
               </p>
 
               {done ? (
