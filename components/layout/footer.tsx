@@ -5,13 +5,18 @@ export function Footer() {
     <footer className="border-t border-[var(--color-border)] mt-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid gap-10 md:grid-cols-4 text-sm">
         <div className="space-y-3">
-          <Image
-            src="/flora-wordmark.png"
-            alt="Flora"
-            width={384}
-            height={256}
-            className="h-8 w-auto rounded-md"
-          />
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/flora-icon.png"
+              alt=""
+              width={256}
+              height={256}
+              className="h-7 w-7 rounded-lg"
+            />
+            <span className="text-base font-bold tracking-[0.18em] text-neutral-950">
+              FLORA
+            </span>
+          </div>
           <p className="text-neutral-600 max-w-xs">
             The social app where runners share shoes, outfits, and race-day gear.
           </p>

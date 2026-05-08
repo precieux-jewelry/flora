@@ -16,15 +16,22 @@ export async function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white/75 border-b border-[var(--color-border)]">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between relative">
-        <Link href="/" aria-label="Flora home" className="flex items-center">
+        <Link
+          href="/"
+          aria-label="Flora home"
+          className="flex items-center gap-2.5"
+        >
           <Image
-            src="/flora-wordmark.png"
-            alt="Flora"
-            width={384}
+            src="/flora-icon.png"
+            alt=""
+            width={256}
             height={256}
             priority
-            className="h-9 w-auto rounded-md"
+            className="h-8 w-8 rounded-lg"
           />
+          <span className="text-lg font-bold tracking-[0.18em] text-neutral-950">
+            FLORA
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-600">

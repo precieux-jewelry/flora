@@ -16,14 +16,21 @@ export function AuthCard({
   return (
     <main className="min-h-[80vh] flex items-center justify-center px-5 py-10">
       <div className="w-full max-w-md">
-        <Link href="/" aria-label="Flora home" className="inline-flex">
+        <Link
+          href="/"
+          aria-label="Flora home"
+          className="inline-flex items-center gap-2.5"
+        >
           <Image
-            src="/flora-wordmark.png"
-            alt="Flora"
-            width={384}
+            src="/flora-icon.png"
+            alt=""
+            width={256}
             height={256}
-            className="h-9 w-auto rounded-md"
+            className="h-8 w-8 rounded-lg"
           />
+          <span className="text-lg font-bold tracking-[0.18em] text-neutral-950">
+            FLORA
+          </span>
         </Link>
 
         <div className="mt-6 rounded-3xl bg-white border border-neutral-100 p-7 shadow-sm">
