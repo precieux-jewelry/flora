@@ -7,7 +7,9 @@ import { MobileMenu } from "./mobile-menu";
 const links = [
   { href: "/explore", label: "Explore" },
   { href: "/shoes", label: "Shoe reviews" },
-  { href: "/outfits", label: "Outfits" },
+  { href: "/outfits", label: "Outfit Scanner" },
+  { href: "/wardrobe", label: "My Wardrobe" },
+  { href: "/fuel", label: "Food Fuel" },
 ];
 
 export async function Navbar() {
