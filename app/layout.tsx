@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     "Flora is the social platform where runners share and review their shoes, outfits, race-day gear, and fueling setups.",
 };
 
+export const viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

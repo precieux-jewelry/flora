@@ -104,11 +104,11 @@ export default async function OutfitDetailPage({
             <dl className="mt-8 rounded-3xl bg-neutral-50 border border-neutral-100 p-6 divide-y divide-neutral-200/70">
               {Object.entries(o.gear).map(([k, v]) =>
                 v ? (
-                  <div key={k} className="flex items-start justify-between gap-4 py-3 first:pt-0 last:pb-0">
-                    <dt className="text-sm text-neutral-500 w-32 shrink-0">
+                  <div key={k} className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 last:pb-0">
+                    <dt className="text-xs sm:text-sm text-neutral-500 sm:w-32 shrink-0 uppercase sm:normal-case tracking-widest sm:tracking-normal">
                       {labels[k] ?? k}
                     </dt>
-                    <dd className="text-sm font-medium text-right">{v}</dd>
+                    <dd className="text-sm font-medium sm:text-right">{v}</dd>
                   </div>
                 ) : null,
               )}

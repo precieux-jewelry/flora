@@ -12,7 +12,7 @@ const statusColor: Record<RotationShoe["status"], string> = {
 
 export function RotationGrid({ rotation }: { rotation: RotationShoe[] }) {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
       {rotation.map((s) => {
         const wear = Math.min(100, (s.miles / 500) * 100);
         return (

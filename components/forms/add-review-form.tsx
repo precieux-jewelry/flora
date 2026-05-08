@@ -150,9 +150,9 @@ function StarPicker({
   onChange: (v: number) => void;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4">
-      <span className="text-sm text-neutral-700">{label}</span>
-      <div className="flex items-center gap-1">
+    <div className="flex items-center justify-between gap-3">
+      <span className="text-sm text-neutral-700 truncate">{label}</span>
+      <div className="flex items-center gap-0.5 shrink-0">
         {[1, 2, 3, 4, 5].map((n) => {
           const filled = n <= value;
           return (

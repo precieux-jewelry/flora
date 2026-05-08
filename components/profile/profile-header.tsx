@@ -44,17 +44,17 @@ export function ProfileHeader({ p }: { p: ProfileFull }) {
           </p>
         </div>
 
-        <div className="flex sm:pb-3 gap-2">
-          <button className="px-5 py-2.5 rounded-full bg-neutral-950 text-white text-sm font-semibold hover:bg-neutral-800 transition">
+        <div className="flex w-full sm:w-auto sm:pb-3 gap-2">
+          <button className="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-neutral-950 text-white text-sm font-semibold hover:bg-neutral-800 transition">
             Follow
           </button>
-          <button className="px-5 py-2.5 rounded-full bg-white border border-neutral-200 text-sm font-medium hover:bg-neutral-50 transition">
+          <button className="flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-white border border-neutral-200 text-sm font-medium hover:bg-neutral-50 transition">
             Message
           </button>
         </div>
       </div>
 
-      <dl className="mt-7 grid grid-cols-2 sm:grid-cols-5 gap-3">
+      <dl className="mt-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         <Stat label="Weekly mi" value={p.weeklyMileage.toString()} accent />
         <Stat label="Total mi" value={p.totalMiles.toLocaleString()} />
         <Stat label="Races" value={p.racesCompleted.toString()} />

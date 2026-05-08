@@ -38,7 +38,7 @@ export function SignupForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid sm:grid-cols-2 gap-3">
         <Field label="Name" name="name" placeholder="Maya Reyes" required />
         <Field label="Username" name="username" placeholder="mayaruns" required />
       </div>

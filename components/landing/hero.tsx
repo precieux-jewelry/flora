@@ -52,14 +52,14 @@ export function Hero() {
           >
             <a
               href="#waitlist"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-800 transition"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-neutral-950 text-white font-medium hover:bg-neutral-800 transition"
             >
               Join waitlist
               <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
             <a
-              href="#shoes"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-neutral-200 font-medium hover:bg-neutral-50 transition"
+              href="/shoes"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-neutral-200 font-medium hover:bg-neutral-50 transition"
             >
               Explore reviews
             </a>
