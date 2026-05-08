@@ -31,7 +31,7 @@ export function Hero() {
             <span className="bg-gradient-to-r from-flora-500 to-flora-700 bg-clip-text text-transparent">
               shoes, outfits, reviews,
             </span>{" "}
-            and race-day gear.
+            and race day fuel.
           </motion.h1>
 
           <motion.p
