@@ -31,7 +31,7 @@ export function RotationGrid({ rotation }: { rotation: RotationShoe[] }) {
                   alt={`${s.brand} ${s.name}`}
                   fill
                   sizes="(max-width: 1024px) 50vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform"
+                  className="object-contain p-3 group-hover:scale-105 transition-transform"
                 />
               )}
               <span className={cn("absolute top-3 left-3 z-10 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full", statusColor[s.status])}>

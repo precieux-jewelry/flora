@@ -1,14 +1,14 @@
 export const featuredShoes = [
   {
-    id: "alphafly-3",
+    id: "vaporfly-4",
     brand: "Nike",
-    name: "ZoomX Alphafly 3",
-    color: "Volt / Black",
-    rating: 4.9,
-    reviews: 1612,
+    name: "ZoomX Vaporfly 4",
+    color: "Violet Mist / Purple Dynasty",
+    rating: 4.8,
+    reviews: 1284,
     tag: "Race Day",
-    bg: "from-lime-200 via-yellow-100 to-amber-50",
-    photoSrc: "/images/shoe-nike-red.jpg",
+    bg: "from-violet-200 via-purple-100 to-fuchsia-50",
+    photoSrc: "/images/shoe-nike-vaporfly-4.avif",
   },
   {
     id: "clifton-10",
@@ -19,7 +19,7 @@ export const featuredShoes = [
     reviews: 1102,
     tag: "Daily Trainer",
     bg: "from-stone-100 via-amber-50 to-stone-50",
-    photoSrc: "/images/run-tying.jpg",
+    photoSrc: "/images/shoe-hoka-clifton-10.webp",
   },
   {
     id: "cloudmonster-3",
@@ -30,18 +30,18 @@ export const featuredShoes = [
     reviews: 778,
     tag: "Long Run",
     bg: "from-orange-100 via-amber-100 to-stone-50",
-    photoSrc: "/images/run-country.jpg",
+    photoSrc: "/images/shoe-on-cloudmonster-3.webp",
   },
   {
     id: "gel-nimbus-27",
     brand: "ASICS",
     name: "Gel-Nimbus 27",
-    color: "Black / Black",
+    color: "Pomegranate / Mantle Yellow",
     rating: 4.6,
     reviews: 932,
     tag: "Daily Trainer",
-    bg: "from-neutral-300 via-neutral-200 to-neutral-100",
-    photoSrc: "/images/shoe-splash.jpg",
+    bg: "from-rose-200 via-orange-100 to-amber-50",
+    photoSrc: "/images/shoe-asics-nimbus-27.jpg",
   },
 ];
 

@@ -24,7 +24,7 @@ export function ShoeCard({ shoe, index = 0 }: { shoe: ShoeReviewItem; index?: nu
               alt={`${shoe.brand} ${shoe.name}`}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover group-hover:scale-105 transition-transform"
+              className="object-contain p-4 group-hover:scale-105 transition-transform"
             />
           )}
           <span className="absolute top-3 left-3 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2 py-1 rounded-full z-10">

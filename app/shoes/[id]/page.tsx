@@ -59,7 +59,7 @@ export default async function ShoeDetailPage({
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
-                className="object-cover"
+                className="object-contain p-10"
               />
             )}
             <span className="absolute top-5 left-5 z-10 text-[10px] font-semibold uppercase tracking-widest bg-white/85 backdrop-blur px-2.5 py-1 rounded-full">
