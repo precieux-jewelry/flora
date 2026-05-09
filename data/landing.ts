@@ -47,11 +47,11 @@ export const featuredShoes = [
 
 export const trendingOutfits = [
   { id: "o1", who: "Maya R.", caption: "Sunrise long run kit", h: "h-72", photoSrc: "/images/run-sunset.jpg" },
-  { id: "o2", who: "Jordan K.", caption: "Race day fit · Berlin", h: "h-56", photoSrc: "/images/run-marathon.jpg" },
-  { id: "o3", who: "Sasha P.", caption: "Cold morning layers", h: "h-80", photoSrc: "/images/run-cold.jpg" },
-  { id: "o4", who: "Theo M.", caption: "Track session set", h: "h-60", photoSrc: "/images/run-track.jpg" },
-  { id: "o5", who: "Aria L.", caption: "Trail kit · open road", h: "h-72", photoSrc: "/images/run-country.jpg" },
-  { id: "o6", who: "Noor B.", caption: "Recovery jog comfy", h: "h-56", photoSrc: "/images/run-tying.jpg" },
+  { id: "o2", who: "Jordan K.", caption: "Race day fit · TCS Marathon", h: "h-80", photoSrc: "/images/trending-tcs-flatlay.jpg" },
+  { id: "o3", who: "Sasha P.", caption: "5K mirror moment", h: "h-96", photoSrc: "/images/trending-strava-5k.jpg" },
+  { id: "o4", who: "Theo M.", caption: "Easy 10K riverside run", h: "h-72", photoSrc: "/images/trending-boy-strava-10k.jpg" },
+  { id: "o5", who: "Aria L.", caption: "Lets go running", h: "h-80", photoSrc: "/images/trending-lets-go-running.jpg" },
+  { id: "o6", who: "Noor B.", caption: "First 10K medal moment", h: "h-72", photoSrc: "/images/trending-beginners-medal.jpg" },
 ];
 
 export const howItWorks = [
