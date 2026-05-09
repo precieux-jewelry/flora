@@ -1,13 +1,13 @@
 export const featuredShoes = [
   {
-    id: "vaporfly-4",
+    id: "alphafly-3",
     brand: "Nike",
-    name: "ZoomX Vaporfly 4",
-    color: "Violet Mist / Purple Dynasty",
-    rating: 4.8,
-    reviews: 1284,
+    name: "ZoomX Alphafly 3",
+    color: "Volt / Black",
+    rating: 4.9,
+    reviews: 1612,
     tag: "Race Day",
-    bg: "from-violet-200 via-purple-100 to-fuchsia-50",
+    bg: "from-lime-200 via-yellow-100 to-amber-50",
     photoSrc: "/images/shoe-nike-red.jpg",
   },
   {

@@ -23,25 +23,25 @@ export type ShoeReviewItem = {
 
 export const shoes: ShoeReviewItem[] = [
   {
-    id: "vaporfly-4",
+    id: "alphafly-3",
     brand: "Nike",
-    name: "ZoomX Vaporfly 4",
-    colorway: "Violet Mist / Purple Dynasty",
+    name: "ZoomX Alphafly 3",
+    colorway: "Volt / Black",
     image: {
-      tone: "from-violet-200 via-purple-100 to-fuchsia-50",
+      tone: "from-lime-200 via-yellow-100 to-amber-50",
       mark: "NIKE",
       src: "/images/shoe-nike-red.jpg",
     },
     category: "Race Day",
-    distanceUsed: 184,
-    ratings: { comfort: 4.7, speed: 4.9, durability: 3.7, stability: 4.0, raceDay: 4.9 },
-    overall: 4.8,
-    reviews: 1284,
+    distanceUsed: 226,
+    ratings: { comfort: 4.7, speed: 5.0, durability: 4.0, stability: 4.2, raceDay: 5.0 },
+    overall: 4.9,
+    reviews: 1612,
     reviewer: { name: "Maya Reyes", username: "mayaruns", tone: "bg-amber-300" },
     review:
-      "Faster than the V3 and the Violet Mist colorway is a vibe. Plate feel is smoother — pop without the rocking-chair effect at slow paces. PR shoe through and through.",
+      "Pure marathon weapon. Air Zoom pods give you free speed at marathon pace and the upper finally locks the heel down. PR shoe — every lace-up feels like cheating.",
     wouldBuyAgain: true,
-    price: 260,
+    price: 285,
   },
   {
     id: "clifton-10",
