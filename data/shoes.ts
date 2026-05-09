@@ -28,7 +28,7 @@ export const shoes: ShoeReviewItem[] = [
     name: "ZoomX Vaporfly 4",
     colorway: "Violet Mist / Purple Dynasty",
     image: {
-      tone: "from-violet-200 via-purple-100 to-fuchsia-50",
+      tone: "from-neutral-950 via-purple-950 to-fuchsia-950",
       mark: "NIKE",
       src: "/images/shoe-nike-vaporfly-4.png",
     },
@@ -49,7 +49,7 @@ export const shoes: ShoeReviewItem[] = [
     name: "Clifton 10",
     colorway: "Vanilla / Birch",
     image: {
-      tone: "from-stone-100 via-amber-50 to-stone-50",
+      tone: "from-neutral-950 via-stone-900 to-amber-950",
       mark: "HOKA",
       src: "/images/shoe-hoka-clifton-10.png",
     },
@@ -70,7 +70,7 @@ export const shoes: ShoeReviewItem[] = [
     name: "Cloudmonster 3",
     colorway: "Ivory / Sunstone",
     image: {
-      tone: "from-orange-100 via-amber-100 to-stone-50",
+      tone: "from-neutral-950 via-orange-950 to-amber-950",
       mark: "ON",
       src: "/images/shoe-on-cloudmonster-3.png",
     },
@@ -91,7 +91,7 @@ export const shoes: ShoeReviewItem[] = [
     name: "Gel-Nimbus 27",
     colorway: "Pomegranate / Mantle Yellow",
     image: {
-      tone: "from-rose-200 via-orange-100 to-amber-50",
+      tone: "from-neutral-950 via-rose-950 to-orange-950",
       mark: "ASICS",
       src: "/images/shoe-asics-nimbus-27.png",
     },

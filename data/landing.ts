@@ -7,7 +7,7 @@ export const featuredShoes = [
     rating: 4.8,
     reviews: 1284,
     tag: "Race Day",
-    bg: "from-violet-200 via-purple-100 to-fuchsia-50",
+    bg: "from-neutral-950 via-purple-950 to-fuchsia-950",
     photoSrc: "/images/shoe-nike-vaporfly-4.png",
   },
   {
@@ -18,7 +18,7 @@ export const featuredShoes = [
     rating: 4.7,
     reviews: 1102,
     tag: "Daily Trainer",
-    bg: "from-stone-100 via-amber-50 to-stone-50",
+    bg: "from-neutral-950 via-stone-900 to-amber-950",
     photoSrc: "/images/shoe-hoka-clifton-10.png",
   },
   {
@@ -29,7 +29,7 @@ export const featuredShoes = [
     rating: 4.5,
     reviews: 778,
     tag: "Long Run",
-    bg: "from-orange-100 via-amber-100 to-stone-50",
+    bg: "from-neutral-950 via-orange-950 to-amber-950",
     photoSrc: "/images/shoe-on-cloudmonster-3.png",
   },
   {
@@ -40,7 +40,7 @@ export const featuredShoes = [
     rating: 4.6,
     reviews: 932,
     tag: "Daily Trainer",
-    bg: "from-rose-200 via-orange-100 to-amber-50",
+    bg: "from-neutral-950 via-rose-950 to-orange-950",
     photoSrc: "/images/shoe-asics-nimbus-27.png",
   },
 ];
