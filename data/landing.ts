@@ -52,6 +52,7 @@ export const trendingOutfits = [
   { id: "o4", who: "Theo M.", caption: "Easy 10K riverside run", h: "h-72", photoSrc: "/images/trending-boy-strava-10k.jpg" },
   { id: "o5", who: "Aria L.", caption: "Lets go running", h: "h-80", photoSrc: "/images/trending-lets-go-running.jpg" },
   { id: "o6", who: "Noor B.", caption: "First 10K medal moment", h: "h-72", photoSrc: "/images/trending-beginners-medal.jpg" },
+  { id: "o7", who: "Jill T.", caption: "Twas the night before · half marathon", h: "h-96", photoSrc: "/images/trending-half-marathon-eve.jpg" },
 ];
 
 export const howItWorks = [
