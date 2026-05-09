@@ -31,11 +31,11 @@ export function IPhonePreview() {
             />
             <FeedCard
               who="Jordan"
-              run="Race day · Berlin"
+              run="Race day · Boston"
               shoe="Adidas Adios Pro 4"
               tone="from-yellow-100 to-yellow-50"
               avatarId="1500648767791-00dcc994a43e"
-              photoSrc="/images/run-marathon.jpg"
+              photoSrc="/images/scanner-boston-flatlay.jpg"
               delay={0.15}
             />
             <FeedCard
