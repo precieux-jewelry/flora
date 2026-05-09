@@ -26,7 +26,7 @@ export function IPhonePreview() {
               shoe="Nike Vaporfly 3"
               tone="from-amber-100 to-amber-50"
               avatarId="1494790108377-be9c29b29330"
-              photoSrc="/images/run-sunset.jpg"
+              photoSrc="/images/trending-half-marathon-eve.jpg"
               delay={0}
             />
             <FeedCard
@@ -44,7 +44,7 @@ export function IPhonePreview() {
               shoe="Hoka Mach X"
               tone="from-stone-100 to-stone-50"
               avatarId="1438761681033-6461ffad8d80"
-              photoSrc="/images/run-track.jpg"
+              photoSrc="/images/trending-lets-go-running.jpg"
               delay={0.3}
             />
           </div>
