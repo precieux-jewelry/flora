@@ -30,7 +30,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-violet-200 via-purple-100 to-fuchsia-50",
       mark: "NIKE",
-      src: "/images/shoe-nike-vaporfly-4.avif",
+      src: "/images/shoe-nike-vaporfly-4.png",
     },
     category: "Race Day",
     distanceUsed: 184,
@@ -51,7 +51,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-stone-100 via-amber-50 to-stone-50",
       mark: "HOKA",
-      src: "/images/shoe-hoka-clifton-10.webp",
+      src: "/images/shoe-hoka-clifton-10.png",
     },
     category: "Daily Trainer",
     distanceUsed: 412,
@@ -72,7 +72,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-orange-100 via-amber-100 to-stone-50",
       mark: "ON",
-      src: "/images/shoe-on-cloudmonster-3.webp",
+      src: "/images/shoe-on-cloudmonster-3.png",
     },
     category: "Long Run",
     distanceUsed: 268,
@@ -93,7 +93,7 @@ export const shoes: ShoeReviewItem[] = [
     image: {
       tone: "from-rose-200 via-orange-100 to-amber-50",
       mark: "ASICS",
-      src: "/images/shoe-asics-nimbus-27.jpg",
+      src: "/images/shoe-asics-nimbus-27.png",
     },
     category: "Daily Trainer",
     distanceUsed: 540,
