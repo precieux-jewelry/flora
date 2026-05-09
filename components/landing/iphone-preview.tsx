@@ -26,7 +26,7 @@ export function IPhonePreview() {
               shoe="Nike Vaporfly 3"
               tone="from-amber-100 to-amber-50"
               avatarId="1494790108377-be9c29b29330"
-              photoSrc="/images/trending-half-marathon-eve.jpg"
+              photoSrc="/images/iphone-pink-bed.jpg"
               delay={0}
             />
             <FeedCard
