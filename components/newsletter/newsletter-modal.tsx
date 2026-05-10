@@ -120,7 +120,7 @@ export function NewsletterModal() {
                 <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-flora-100 px-4 py-2.5 text-sm">
                   <Check className="h-4 w-4 text-flora-700" />
                   <span className="font-medium text-flora-800">
-                    You’re in. Watch your inbox.
+                    You’re in — check your inbox.
                   </span>
                 </div>
               ) : (
