@@ -8,8 +8,10 @@ export type WaitlistResult =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const KIT_FORM_UID = "83f239d218";
-const KIT_ENDPOINT = `https://app.kit.com/forms/${KIT_FORM_UID}/subscriptions`;
+// `83f239d218` is the JS-embed key. The API endpoint requires the numeric
+// form ID (extracted from the rendered form's action attribute).
+const KIT_FORM_ID = "9426026";
+const KIT_ENDPOINT = `https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`;
 const GENERIC_ERROR = "Something went wrong. Please try again.";
 
 /**
@@ -28,6 +30,7 @@ export async function joinWaitlist(
     return { ok: false, error: "Please enter a valid email address." };
 
   // 1. Push to Kit (the source of truth for the welcome sequence).
+  // Kit returns HTTP 200 even on failure, so we have to inspect the body's `status`.
   let kitOk = false;
   try {
     const res = await fetch(KIT_ENDPOINT, {
@@ -37,12 +40,14 @@ export async function joinWaitlist(
         Accept: "application/json",
       },
       body: JSON.stringify({ email_address: trimmed }),
-      // Don't cache the form submission.
       cache: "no-store",
     });
-    kitOk = res.ok;
-    if (!res.ok) {
-      console.error("Kit subscribe failed", res.status, await res.text());
+    const json = (await res.json().catch(() => null)) as
+      | { status?: string; errors?: unknown }
+      | null;
+    kitOk = res.ok && json?.status === "success";
+    if (!kitOk) {
+      console.error("Kit subscribe failed", res.status, json);
     }
   } catch (err) {
     console.error("Kit subscribe error", err);
