@@ -4,10 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState, useTransition } from "react";
 import { ArrowRight, Check, Sparkles, X } from "lucide-react";
 import Image from "next/image";
-import { joinWaitlist } from "@/app/actions/waitlist";
 
 const STORAGE_KEY = "flora_newsletter_dismissed";
 const DELAY_MS = 5_000;
+
+// Kit form 9426026 (embed UID 83f239d218 — Flora Running Gear Reviews).
+// Submits directly from the browser, exactly like Kit's HTML form embed.
+const KIT_ENDPOINT = "https://app.kit.com/forms/9426026/subscriptions";
+const ERROR_MESSAGE = "Something went wrong. Please try again.";
 
 export function NewsletterModal() {
   const [open, setOpen] = useState(false);
@@ -33,19 +37,42 @@ export function NewsletterModal() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const email = String(data.get("email") ?? "");
+    const email = String(data.get("email") ?? "").trim();
     if (!email) return;
     setError(null);
+
     startTransition(async () => {
-      const res = await joinWaitlist(email, "newsletter");
-      if (res.ok) {
-        setDone(true);
-        if (typeof window !== "undefined") {
-          sessionStorage.setItem(STORAGE_KEY, "1");
+      try {
+        const body = new URLSearchParams({ email_address: email });
+        const res = await fetch(KIT_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
+          },
+          body: body.toString(),
+        });
+
+        let json: { status?: string } | null = null;
+        try {
+          json = (await res.json()) as { status?: string };
+        } catch {
+          // Some success responses are empty; trust the HTTP status code.
         }
-        setTimeout(() => setOpen(false), 2200);
-      } else {
-        setError(res.error);
+
+        if (res.ok && (json?.status === "success" || json === null)) {
+          setDone(true);
+          if (typeof window !== "undefined") {
+            sessionStorage.setItem(STORAGE_KEY, "1");
+          }
+          setTimeout(() => setOpen(false), 2200);
+        } else {
+          console.error("Kit subscribe failed", res.status, json);
+          setError(ERROR_MESSAGE);
+        }
+      } catch (err) {
+        console.error("Kit subscribe error", err);
+        setError(ERROR_MESSAGE);
       }
     });
   }
