@@ -13,6 +13,29 @@ const DELAY_MS = 5_000;
 const KIT_ENDPOINT = "https://app.kit.com/forms/9426026/subscriptions";
 const ERROR_MESSAGE = "Something went wrong. Please try again.";
 
+// Mirror every Kit signup into Supabase (project: jewelry-marketplace-research,
+// table: public.flora_waitlist). Public anon insert is allowed via RLS policy.
+async function mirrorToSupabase(email: string, source: string) {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return;
+  try {
+    await fetch(`${url}/rest/v1/flora_waitlist`, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=ignore-duplicates",
+      },
+      body: JSON.stringify({ email, source }),
+    });
+  } catch (err) {
+    // Don't block the user — Kit already has them.
+    console.warn("Supabase mirror failed", err);
+  }
+}
+
 export function NewsletterModal() {
   const [open, setOpen] = useState(false);
   const [done, setDone] = useState(false);
@@ -61,6 +84,9 @@ export function NewsletterModal() {
         }
 
         if (res.ok && (json?.status === "success" || json === null)) {
+          // Fire-and-forget mirror to Supabase so we keep a database copy.
+          void mirrorToSupabase(email, "newsletter");
+
           setDone(true);
           if (typeof window !== "undefined") {
             sessionStorage.setItem(STORAGE_KEY, "1");
