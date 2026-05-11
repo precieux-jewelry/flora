@@ -26,7 +26,6 @@ async function mirrorToSupabase(email: string, source: string) {
         apikey: key,
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
-        Prefer: "resolution=ignore-duplicates",
       },
       body: JSON.stringify({ email, source }),
     });
